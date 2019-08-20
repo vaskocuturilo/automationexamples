@@ -9,7 +9,7 @@ public class SelectBrowser {
 
         if ("Chrome".equals(browser)) {
 
-            WebDriverManager.chromedriver().version("2.26").setup();
+            WebDriverManager.chromedriver().version("76.0.3809.68").setup();
             Configuration.browser = "Chrome";
             Configuration.timeout = 10;
 
