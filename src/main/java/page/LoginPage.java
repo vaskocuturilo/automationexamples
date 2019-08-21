@@ -1,5 +1,6 @@
 package page;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -14,7 +15,8 @@ public class LoginPage {
      */
     private SelenideElement loginField = $("input[id='username']"),
             passwordField = $("input[id='password']"),
-            loginButton = $("button[class='radius']");
+            loginButton = $("button[class='radius']"),
+            validationMessage = $("div[id='flash']");
 
 
     public LoginPage() {
@@ -63,10 +65,17 @@ public class LoginPage {
      * @param password the password.
      * @return the secure page.
      */
-    public SecurePage enterValidData(final String login, final String password) {
+    public LoginPage enterValidData(final String login, final String password) {
         enterUsername(login);
         enterPassword(password);
         clickLoginButton();
-        return new SecurePage();
+        return this;
+    }
+
+    public LoginPage checkValidationMessage(String messageForValidation) {
+
+        validationMessage.waitUntil(Condition.visible, 5000).shouldHave(Condition.text(messageForValidation));
+
+        return this;
     }
 }
