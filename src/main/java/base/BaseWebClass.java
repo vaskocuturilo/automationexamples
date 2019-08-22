@@ -20,6 +20,9 @@ public class BaseWebClass {
      */
     private static final Logger LOG = Logger.getLogger(BaseWebClass.class.getName());
 
+    /**
+     * Default constructor.
+     */
     public BaseWebClass() {
         super();
         //empty
@@ -34,9 +37,7 @@ public class BaseWebClass {
         baseUrl = "http://the-internet.herokuapp.com";
         selectBrowser("Chrome");
         clearBrowserCache();
-
     }
-
 
     /**
      * Method stop.
@@ -46,8 +47,5 @@ public class BaseWebClass {
         LOG.info("Method start");
         closeWebDriver();
         LOG.info("Method stop");
-
-
     }
-
 }

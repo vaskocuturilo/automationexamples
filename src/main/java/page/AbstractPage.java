@@ -6,11 +6,15 @@ import com.codeborne.selenide.WebDriverRunner;
 
 
 /**
- * The type AbstractPage.
+ * Abstract class AbstractPage.
  */
+@SuppressWarnings("PMD.LawOfDemeter")
 public abstract class AbstractPage extends BaseWebClass {
 
 
+    /**
+     * Default constructor.
+     */
     public AbstractPage() {
         super();
         //empty

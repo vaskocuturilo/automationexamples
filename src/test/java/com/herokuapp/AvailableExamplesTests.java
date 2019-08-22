@@ -13,12 +13,12 @@ public class AvailableExamplesTests extends AbstractPage {
 
     @Test(dataProvider = "loginCred", dataProviderClass = DataProviders.class)
     @Story("Login automation script.")
-    public void checkAuthorization(String username, String password) {
+    public void checkAuthorization(String username, String password, String messageForValidation ) {
         openPage("/login");
         assertEquals("The Internet", getTitlePage());
         new LoginPage()
                 .enterValidData(username, password)
-                .checkValidationMessage("Your username is invalid!");
+                .checkValidationMessage(messageForValidation);
     }
 
     @Test()

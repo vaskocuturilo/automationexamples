@@ -16,16 +16,16 @@ public final class DataProviders {
     }
 
     /**
-     * Login cred object [ ] [ ].
+     * Method Logincred object [ ] [ ].
      *
      * @return the object [ ] [ ]
      */
     @DataProvider(name = "loginCred")
     public static Object[][] loginCred() {
         return new Object[][]{
-                {"", ""},
-                {"", ""},
-                {"", ""}
+                {"tomsmith", "SuperSecretPassword!", "You logged into a secure area!"},
+                {"test", "test", "Your username is invalid!"},
+                {"test1", "test1", "Your username is invalid!"}
         };
     }
 }

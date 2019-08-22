@@ -8,6 +8,8 @@ import static com.codeborne.selenide.Selenide.$;
 /**
  * The class Login page.
  */
+@SuppressWarnings({"PMD.LawOfDemeter", "PMD.ImmutableField", "PMD.BeanMembersShouldSerialize"})
+
 public class LoginPage {
 
     /**
@@ -18,7 +20,9 @@ public class LoginPage {
             loginButton = $("button[class='radius']"),
             validationMessage = $("div[id='flash']");
 
-
+    /**
+     * Default constructor.
+     */
     public LoginPage() {
         super();
         //empty
@@ -72,9 +76,16 @@ public class LoginPage {
         return this;
     }
 
-    public LoginPage checkValidationMessage(String messageForValidation) {
 
-        validationMessage.waitUntil(Condition.visible, 5000).shouldHave(Condition.text(messageForValidation));
+    /**
+     * Method checkValidationMessage.
+     *
+     * @param validMessage validation message.
+     * @return the secure page.
+     */
+    public LoginPage checkValidationMessage(final String validMessage) {
+
+        validationMessage.waitUntil(Condition.visible, 5000).shouldHave(Condition.text(validMessage));
 
         return this;
     }

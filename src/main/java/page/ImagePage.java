@@ -4,8 +4,28 @@ import com.codeborne.selenide.Condition;
 
 import static com.codeborne.selenide.Selenide.$;
 
+
+/**
+ * The class Image page.
+ */
+@SuppressWarnings("PMD.LawOfDemeter")
 public class ImagePage {
 
+    /**
+     * Default constructor.
+     */
+    public ImagePage() {
+        super();
+        //empty
+        return;
+    }
+
+    /**
+     * Method Select and hover image page.
+     *
+     * @param numberImage the number image
+     * @return the image page
+     */
     public ImagePage selectAndHoverImage(final int numberImage) {
 
         $("div[id='content'] div:nth-child(" + numberImage + ") img").hover();
@@ -13,6 +33,13 @@ public class ImagePage {
         return this;
     }
 
+    /**
+     * Method Select and hover image  page.
+     *
+     * @param numberImage the number image
+     * @param nameImage   the name image
+     * @return the image page
+     */
     public ImagePage selectAndHoverImage(final int numberImage, final String nameImage) {
 
         $("div[id='content'] div:nth-child(" + numberImage + ") [class='figcaption']")

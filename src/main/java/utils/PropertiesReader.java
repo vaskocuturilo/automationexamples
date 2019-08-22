@@ -11,7 +11,7 @@ import java.util.Properties;
  * Class PropertiesReader.
  */
 
-public class PropertiesReader {
+public final class PropertiesReader {
 
     /**
      * Constant LOGGER.
