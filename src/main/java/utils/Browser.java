@@ -30,11 +30,19 @@ public final class Browser {
     public static void selectBrowser(final String browser) {
 
         if ("Chrome".equals(browser)) {
-
-            WebDriverManager.chromedriver().version("76.0.3809.68").setup();
+            WebDriverManager.chromedriver().setup();
             Configuration.browser = "Chrome";
             Configuration.timeout = TIME_OUT;
-
+        } else if ("Firefox".equals(browser)) {
+            WebDriverManager.firefoxdriver().setup();
+            Configuration.browser = "Firefox";
+            Configuration.timeout = TIME_OUT;
+        } else if ("Edge".equals(browser)) {
+            WebDriverManager.edgedriver().setup();
+            Configuration.browser = "Edge";
+            Configuration.timeout = TIME_OUT;
+        } else {
+            throw new IllegalStateException("Browser " + browser + " not supported in this test");
         }
     }
 }
