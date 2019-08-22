@@ -13,6 +13,11 @@ import static com.codeborne.selenide.Selenide.$;
 public class LoginPage {
 
     /**
+     * Constant DELAY.
+     */
+    private static final long DELAY = 5000;
+
+    /**
      * The private Selenide Elements.
      */
     private SelenideElement loginField = $("input[id='username']"),
@@ -85,7 +90,7 @@ public class LoginPage {
      */
     public LoginPage checkValidationMessage(final String validMessage) {
 
-        validationMessage.waitUntil(Condition.visible, 5000).shouldHave(Condition.text(validMessage));
+        validationMessage.waitUntil(Condition.visible, DELAY).shouldHave(Condition.text(validMessage));
 
         return this;
     }

@@ -12,6 +12,11 @@ import static com.codeborne.selenide.Selenide.$;
 public class ImagePage {
 
     /**
+     * Constant DELAY.
+     */
+    private static final long DELAY = 5000;
+
+    /**
      * Default constructor.
      */
     public ImagePage() {
@@ -43,7 +48,7 @@ public class ImagePage {
     public ImagePage selectAndHoverImage(final int numberImage, final String nameImage) {
 
         $("div[id='content'] div:nth-child(" + numberImage + ") [class='figcaption']")
-                .waitUntil(Condition.visible, 5000)
+                .waitUntil(Condition.visible, DELAY)
                 .shouldHave(Condition.text(nameImage));
 
         return this;
