@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import page.ImagePage;
 import page.LoginPage;
 import page.AbstractPage;
+import page.TablePage;
 
 import static org.testng.Assert.assertEquals;
 
@@ -13,7 +14,7 @@ public class AvailableExamplesTests extends AbstractPage {
 
     @Test(dataProvider = "loginCred", dataProviderClass = DataProviders.class)
     @Story("Login automation script.")
-    public void checkAuthorization(String username, String password, String messageForValidation ) {
+    public void checkAuthorization(String username, String password, String messageForValidation) {
         openPage("/login");
         assertEquals("The Internet", getTitlePage());
         new LoginPage()
@@ -29,7 +30,15 @@ public class AvailableExamplesTests extends AbstractPage {
         new ImagePage()
                 .selectAndHoverImage(3)
                 .selectAndHoverImage(3, "user1");
+    }
 
-
+    @Test
+    @Story("Sorting data tables")
+    public void sortTable() {
+        openPage("/tables");
+        assertEquals("The Internet", getTitlePage());
+        new TablePage()
+                .assertResult()
+                .sortHeaderDescending();
     }
 }
