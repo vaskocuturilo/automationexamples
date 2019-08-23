@@ -32,6 +32,17 @@ public abstract class AbstractPage extends BaseWebClass {
     }
 
     /**
+     * Method Open page.
+     *
+     * @param url the url
+     */
+    public void openPage(final String url, String username, String password) {
+        Selenide.open(url, "", username, password);
+
+    }
+
+
+    /**
      * Method GetTitlePage.
      *
      * @return the title page

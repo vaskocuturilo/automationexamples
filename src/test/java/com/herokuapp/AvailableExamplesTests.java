@@ -1,5 +1,6 @@
 package com.herokuapp;
 
+import com.codeborne.selenide.Selenide;
 import data.DataProviders;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
@@ -46,6 +47,15 @@ public class AvailableExamplesTests extends AbstractPage {
         assertEquals("The Internet", getTitlePage());
         new ElementsPages()
                 .actionItems();
+    }
+
+    @Test
+    @Story("Basic Auth.")
+    public void basicAuth() {
+        openPage("/basic_auth", "admin", "admin");
+        assertEquals("The Internet", getTitlePage());
+        new BasicAuth()
+                .checkValidationMessages();
 
 
     }
