@@ -3,10 +3,7 @@ package com.herokuapp;
 import data.DataProviders;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
-import page.ImagePage;
-import page.LoginPage;
-import page.AbstractPage;
-import page.TablePage;
+import page.*;
 
 import static org.testng.Assert.assertEquals;
 
@@ -40,5 +37,16 @@ public class AvailableExamplesTests extends AbstractPage {
         new TablePage()
                 .assertResult()
                 .sortHeaderDescending();
+    }
+
+    @Test
+    @Story("Add/Remove Elements")
+    public void addRemoveElements() {
+        openPage("/add_remove_elements/");
+        assertEquals("The Internet", getTitlePage());
+        new ElementsPages()
+                .actionItems();
+
+
     }
 }
