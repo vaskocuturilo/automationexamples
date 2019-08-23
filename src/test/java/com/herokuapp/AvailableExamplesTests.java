@@ -30,7 +30,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Sorting data tables")
+    @Story("Sorting data tables.")
     public void sortTable() {
         openPage("/tables");
         assertEquals("The Internet", getTitlePage());
@@ -40,7 +40,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Add/Remove Elements")
+    @Story("Add/Remove Elements.")
     public void addRemoveElements() {
         openPage("/add_remove_elements/");
         assertEquals("The Internet", getTitlePage());
