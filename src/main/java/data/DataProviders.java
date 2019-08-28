@@ -28,4 +28,19 @@ public final class DataProviders {
                 {"test1", "test1", "Your username is invalid!"}
         };
     }
+
+    /**
+     * Method dataForSelector object [ ] [ ].
+     *
+     * @return the object [ ] [ ]
+     */
+    @DataProvider(name = "dataForSelector")
+    public static Object[][] dataForSelector() {
+        return new Object[][]{
+                {"Option 1"},
+                {"Option 2"}
+        };
+    }
+
+
 }

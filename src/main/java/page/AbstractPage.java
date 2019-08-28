@@ -4,6 +4,8 @@ import base.BaseWebClass;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 
+import static org.testng.Assert.assertEquals;
+
 
 /**
  * Abstract class AbstractPage.
@@ -28,6 +30,7 @@ public abstract class AbstractPage extends BaseWebClass {
      */
     public void openPage(final String url) {
         Selenide.open(url);
+        assertEquals("The Internet", getTitlePage());
 
     }
 
@@ -38,6 +41,7 @@ public abstract class AbstractPage extends BaseWebClass {
      */
     public void openPage(final String url, String username, String password) {
         Selenide.open(url, "", username, password);
+        assertEquals("The Internet", getTitlePage());
 
     }
 

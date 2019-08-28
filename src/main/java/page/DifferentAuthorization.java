@@ -1,13 +1,14 @@
 package page;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.*;
 
 /**
  * The class Basic auth.
  */
-public class BasicAuth {
+public class DifferentAuthorization {
 
     /**
      * Constant DELAY.
@@ -17,15 +18,18 @@ public class BasicAuth {
     /**
      * Constant CHECK_TEXT.
      */
-    private static final String CHECK_TEXT = "Basic Auth";
+
+
+    private SelenideElement
+            content = $("div[id='content']");
 
     /**
      * Method Check validation messages basic auth.
      *
      * @return the basic auth.
      */
-    public BasicAuth checkValidationMessages() {
-        $("div[id='content']").waitUntil(Condition.enabled, DELAY).shouldHave(Condition.text(CHECK_TEXT));
+    public DifferentAuthorization checkValidationMessages(String text) {
+        content.waitUntil(Condition.enabled, DELAY).shouldHave(Condition.text(text));
         return this;
     }
 }
