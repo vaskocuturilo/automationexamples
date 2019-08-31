@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.*;
 /**
  * The class Basic auth.
  */
-public class DifferentAuthorization {
+public class DifferentAuthorizationPage {
 
     /**
      * Constant DELAY.
@@ -16,10 +16,8 @@ public class DifferentAuthorization {
     private static final long DELAY = 5000;
 
     /**
-     * Constant CHECK_TEXT.
+     * Private selenide element.
      */
-
-
     private SelenideElement
             content = $("div[id='content']");
 
@@ -28,7 +26,7 @@ public class DifferentAuthorization {
      *
      * @return the basic auth.
      */
-    public DifferentAuthorization checkValidationMessages(String text) {
+    public DifferentAuthorizationPage checkValidationMessages(String text) {
         content.waitUntil(Condition.enabled, DELAY).shouldHave(Condition.text(text));
         return this;
     }

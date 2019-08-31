@@ -50,7 +50,7 @@ public class AvailableExamplesTests extends AbstractPage {
     @Story("Basic Auth.")
     public void testBasicAuth() {
         openPage("/basic_auth", "admin", "admin");
-        new DifferentAuthorization()
+        new DifferentAuthorizationPage()
                 .checkValidationMessages(CHECK_BASIC);
     }
 
@@ -83,7 +83,7 @@ public class AvailableExamplesTests extends AbstractPage {
     @Story("Digest Auth")
     public void testDigestAuthentication() {
         openPage("/digest_auth", "admin", "admin");
-        new DifferentAuthorization()
+        new DifferentAuthorizationPage()
                 .checkValidationMessages(CHECK_DIGEST);
     }
 
@@ -101,6 +101,14 @@ public class AvailableExamplesTests extends AbstractPage {
         openPage("/dropdown");
         new DropDownPage()
                 .selectText(selector);
+    }
+
+    @Test
+    @Story("Entry Ad")
+    public void testEntryAd() {
+        openPage("/entry_ad");
+        new ModalWindowPage()
+                .assertAndCloseModalWindow();
     }
 
 }
