@@ -13,17 +13,11 @@ import static com.codeborne.selenide.Selenide.$;
 public class LoginPage {
 
     /**
-     * Constant DELAY.
-     */
-    private static final long DELAY = 5000;
-
-    /**
      * The private Selenide Elements.
      */
     private SelenideElement loginField = $("input[id='username']"),
             passwordField = $("input[id='password']"),
-            loginButton = $("button[class='radius']"),
-            validationMessage = $("div[id='flash']");
+            loginButton = $("button[class='radius']");
 
     /**
      * Default constructor.
@@ -74,24 +68,11 @@ public class LoginPage {
      * @param password the password.
      * @return the secure pages.
      */
-    public LoginPage enterValidData(final String login, final String password) {
+    public SecurePage enterValidData(final String login, final String password) {
         enterUsername(login);
         enterPassword(password);
         clickLoginButton();
-        return this;
+        return new SecurePage();
     }
 
-
-    /**
-     * Method checkValidationMessage.
-     *
-     * @param validMessage validation message.
-     * @return the secure pages.
-     */
-    public LoginPage checkValidationMessage(final String validMessage) {
-
-        validationMessage.waitUntil(Condition.visible, DELAY).shouldHave(Condition.text(validMessage));
-
-        return this;
-    }
 }

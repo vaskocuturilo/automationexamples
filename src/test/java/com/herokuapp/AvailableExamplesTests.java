@@ -119,4 +119,16 @@ public class AvailableExamplesTests extends AbstractPage {
                 .enterEmail()
                 .confirmationSent();
     }
+
+    @Test
+    @Story("JavaScript alerts")
+    public void JSAlerts() {
+        openPage("/javascript_alerts");
+        new AlertsPage()
+                .JSAlerts()
+                .JSConfirm()
+                .JSPrompt()
+                .confirmationResult();
+
+    }
 }
