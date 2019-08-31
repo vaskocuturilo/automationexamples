@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import com.codeborne.selenide.SelenideElement;
 
@@ -8,7 +8,7 @@ import static org.testng.Assert.assertEquals;
 
 
 /**
- * The class Context menu page.
+ * The class Context menu pages.
  */
 public class ContextMenuPage {
 
@@ -19,9 +19,9 @@ public class ContextMenuPage {
     private SelenideElement hotSpot = $("div[id='hot-spot']");
 
     /**
-     * Open context menu context menu page.
+     * Open context menu context menu pages.
      *
-     * @return the context menu page.
+     * @return the context menu pages.
      */
     public ContextMenuPage openContextMenu() {
 
@@ -35,7 +35,7 @@ public class ContextMenuPage {
     /**
      * Method assertAlertText.
      *
-     * @return the context menu page.
+     * @return the context menu pages.
      */
     private ContextMenuPage assertAlertText() {
 

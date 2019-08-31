@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import com.codeborne.selenide.Condition;
 
@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 
 /**
- * The class Image page.
+ * The class Image pages.
  */
 @SuppressWarnings("PMD.LawOfDemeter")
 public class ImagePage {
@@ -26,10 +26,10 @@ public class ImagePage {
     }
 
     /**
-     * Method Select and hover image page.
+     * Method Select and hover image pages.
      *
      * @param numberImage the number image
-     * @return the image page
+     * @return the image pages
      */
     public ImagePage selectAndHoverImage(final int numberImage) {
 
@@ -39,11 +39,11 @@ public class ImagePage {
     }
 
     /**
-     * Method Select and hover image  page.
+     * Method Select and hover image  pages.
      *
      * @param numberImage the number image
      * @param nameImage   the name image
-     * @return the image page
+     * @return the image pages
      */
     public ImagePage selectAndHoverImage(final int numberImage, final String nameImage) {
 

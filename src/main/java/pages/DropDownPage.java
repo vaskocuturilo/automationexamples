@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 
 /**
- * The class Drop down page.
+ * The class Drop down pages.
  */
 public class DropDownPage {
 
@@ -22,10 +22,10 @@ public class DropDownPage {
     private SelenideElement selector = $("select[id='dropdown']");
 
     /**
-     * Select text drop down page.
+     * Select text drop down pages.
      *
      * @param text the text.
-     * @return the drop down page.
+     * @return the drop down pages.
      */
     public DropDownPage selectText(String text) {
 

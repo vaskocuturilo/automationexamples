@@ -3,7 +3,7 @@ package com.herokuapp;
 import data.DataProviders;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
-import page.*;
+import pages.*;
 
 public class AvailableExamplesTests extends AbstractPage {
 
@@ -21,7 +21,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test()
-    @Story("Automation script for check images on hovers page.")
+    @Story("Automation script for check images on hovers pages.")
     public void testCheckImages() {
         openPage("/hovers");
         new ImagePage()
@@ -111,4 +111,12 @@ public class AvailableExamplesTests extends AbstractPage {
                 .assertAndCloseModalWindow();
     }
 
+    @Test
+    @Story("Forgot Password")
+    public void testForgotPassword() {
+        openPage("/forgot_password");
+        new ForgotPasswordPage()
+                .enterEmail()
+                .confirmationSent();
+    }
 }

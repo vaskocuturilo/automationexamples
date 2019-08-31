@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import base.BaseWebClass;
 import com.codeborne.selenide.Selenide;
@@ -24,7 +24,7 @@ public abstract class AbstractPage extends BaseWebClass {
     }
 
     /**
-     * Method Open page.
+     * Method Open pages.
      *
      * @param url the url
      */
@@ -35,7 +35,7 @@ public abstract class AbstractPage extends BaseWebClass {
     }
 
     /**
-     * Method Open page.
+     * Method Open pages.
      *
      * @param url the url
      */
@@ -49,7 +49,7 @@ public abstract class AbstractPage extends BaseWebClass {
     /**
      * Method GetTitlePage.
      *
-     * @return the title page
+     * @return the title pages
      */
     public String getTitlePage() {
         return WebDriverRunner.getWebDriver().getTitle();

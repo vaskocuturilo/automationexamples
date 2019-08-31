@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
@@ -6,7 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
 
 /**
- * The class Login page.
+ * The class Login pages.
  */
 @SuppressWarnings({"PMD.LawOfDemeter", "PMD.ImmutableField", "PMD.BeanMembersShouldSerialize"})
 
@@ -68,11 +68,11 @@ public class LoginPage {
     }
 
     /**
-     * Method Enter valid data secure page.
+     * Method Enter valid data secure pages.
      *
      * @param login    login.
      * @param password the password.
-     * @return the secure page.
+     * @return the secure pages.
      */
     public LoginPage enterValidData(final String login, final String password) {
         enterUsername(login);
@@ -86,7 +86,7 @@ public class LoginPage {
      * Method checkValidationMessage.
      *
      * @param validMessage validation message.
-     * @return the secure page.
+     * @return the secure pages.
      */
     public LoginPage checkValidationMessage(final String validMessage) {
 

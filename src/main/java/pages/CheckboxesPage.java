@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import com.codeborne.selenide.SelenideElement;
 
@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 
 /**
- * The class Checkboxes page.
+ * The class Checkboxes pages.
  */
 public class CheckboxesPage {
 
@@ -19,9 +19,9 @@ public class CheckboxesPage {
             checkedTwo = $("form[id='checkboxes'] input:nth-child(3)");
 
     /**
-     * Checked one checked checkboxes page.
+     * Checked one checked checkboxes pages.
      *
-     * @return the checkboxes page
+     * @return the checkboxes pages
      */
     public CheckboxesPage checkedOneChecked() {
         checkedOne.click();
@@ -30,9 +30,9 @@ public class CheckboxesPage {
     }
 
     /**
-     * Checked two checked checkboxes page.
+     * Checked two checked checkboxes pages.
      *
-     * @return the checkboxes page
+     * @return the checkboxes pages
      */
     public CheckboxesPage checkedTwoChecked() {
         if (!checkedTwo.isSelected()) {

@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import com.codeborne.selenide.SelenideElement;
 
@@ -8,7 +8,7 @@ import static org.testng.Assert.assertEquals;
 
 
 /**
- * The class Drag and drop page.
+ * The class Drag and drop pages.
  */
 public class DragAndDropPage {
 
@@ -27,7 +27,7 @@ public class DragAndDropPage {
      *
      * @param source source.
      * @param target target.
-     * @return the drag and drop page
+     * @return the drag and drop pages
      */
     private DragAndDropPage checkContextRectangles(String source, String target) {
 
@@ -37,9 +37,9 @@ public class DragAndDropPage {
     }
 
     /**
-     * Move to elements drag and drop page.
+     * Move to elements drag and drop pages.
      *
-     * @return the drag and drop page
+     * @return the drag and drop pages
      */
     public DragAndDropPage moveToElements() {
         checkContextRectangles("A", "B");

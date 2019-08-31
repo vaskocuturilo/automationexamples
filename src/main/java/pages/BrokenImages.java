@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import base.BaseWebClass;
 import com.codeborne.selenide.SelenideElement;
