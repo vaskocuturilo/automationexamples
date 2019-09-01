@@ -2,6 +2,7 @@ package com.herokuapp;
 
 import data.DataProviders;
 import io.qameta.allure.Story;
+import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import pages.*;
 
@@ -122,13 +123,21 @@ public class AvailableExamplesTests extends AbstractPage {
 
     @Test
     @Story("JavaScript alerts")
-    public void JSAlerts() {
+    public void testJSAlerts() {
         openPage("/javascript_alerts");
         new AlertsPage()
                 .JSAlerts()
                 .JSConfirm()
                 .JSPrompt()
                 .confirmationResult();
-
     }
+
+    @Test
+    @Story("Key Presses")
+    public void testKeyPresses() {
+        openPage("/key_presses");
+        new KeyPressesPage()
+                .useKeyButton(Keys.ESCAPE);
+    }
+
 }
