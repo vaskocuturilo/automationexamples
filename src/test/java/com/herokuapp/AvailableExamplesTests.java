@@ -140,4 +140,14 @@ public class AvailableExamplesTests extends AbstractPage {
                 .useKeyButton(Keys.ESCAPE);
     }
 
+    @Test
+    @Story("Redirection")
+    public void testRedirection(){
+        openPage("/redirector");
+        new RedirectionPage()
+                .usingRedirection();
+
+
+    }
+
 }
