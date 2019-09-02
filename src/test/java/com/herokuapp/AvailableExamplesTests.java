@@ -142,7 +142,7 @@ public class AvailableExamplesTests extends AbstractPage {
 
     @Test
     @Story("Redirection")
-    public void testRedirection(){
+    public void testRedirection() {
         openPage("/redirector");
         new RedirectionPage()
                 .usingRedirection();
@@ -150,4 +150,10 @@ public class AvailableExamplesTests extends AbstractPage {
 
     }
 
+    @Test
+    @Story("Slow Resources")
+    public void testSlowResources() {
+        new SlowResources()
+                .checkThatResourcesIsVerySlow();
+    }
 }
