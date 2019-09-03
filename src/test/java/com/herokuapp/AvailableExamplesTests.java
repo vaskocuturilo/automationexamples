@@ -156,4 +156,12 @@ public class AvailableExamplesTests extends AbstractPage {
         new SlowResources()
                 .checkThatResourcesIsVerySlow();
     }
+
+    @Test
+    @Story("Status Codes")
+    public void testStatusCode() {
+        openPage("/status_codes");
+        new StatusCodePage()
+                .checkStatusCodeContent();
+    }
 }
