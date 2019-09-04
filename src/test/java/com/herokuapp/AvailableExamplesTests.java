@@ -6,11 +6,16 @@ import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import pages.*;
 
+import java.io.File;
+
 public class AvailableExamplesTests extends AbstractPage {
 
     private static final String CHECK_BASIC = "Basic Auth";
 
     private static final String CHECK_DIGEST = "Digest Auth";
+
+    private final File fileForUpload = new File("src/main/resources/uploadFile.png");
+
 
     @Test(dataProvider = "loginCred", dataProviderClass = DataProviders.class)
     @Story("Login automation script.")
@@ -163,5 +168,13 @@ public class AvailableExamplesTests extends AbstractPage {
         openPage("/status_codes");
         new StatusCodePage()
                 .checkStatusCodeContent();
+    }
+
+    @Test
+    @Story("Upload file")
+    public void testUploadFile() {
+        openPage("/upload");
+        new UploadFile()
+                .checkUploadFile(fileForUpload);
     }
 }
