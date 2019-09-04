@@ -177,4 +177,11 @@ public class AvailableExamplesTests extends AbstractPage {
         new UploadFile()
                 .checkUploadFile(fileForUpload);
     }
+
+    @Test
+    public void testDisappearingElements() {
+        openPage("/disappearing_elements");
+        new DisappearingElementsPage()
+                .assertPagesAfterTransition();
+    }
 }
