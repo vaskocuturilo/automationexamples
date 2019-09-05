@@ -179,9 +179,20 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
+    @Story("Disappearing elements")
     public void testDisappearingElements() {
         openPage("/disappearing_elements");
         new DisappearingElementsPage()
                 .assertPagesAfterTransition();
     }
+
+    @Test
+    @Story("Dynamic Controls")
+    public void testDynamicControls() {
+        openPage("/dynamic_controls");
+        new DynamicControlsPage()
+                .clickAndRemoveCheckBox()
+                .enableDisable("test");
+    }
+
 }

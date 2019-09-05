@@ -17,6 +17,11 @@ public final class Browser {
     private static final int TIME_OUT = 10;
 
     /**
+     * Constant value BROWSER SIZE.
+     */
+    private static final String BROWSER_SIZE = "1340x768";
+
+    /**
      * Default constructor..
      */
     private Browser() {
@@ -28,6 +33,7 @@ public final class Browser {
      * @param browser the browser
      */
     public static void selectBrowser(final String browser) {
+        Configuration.browserSize = BROWSER_SIZE;
 
         if ("Chrome".equals(browser)) {
             WebDriverManager.chromedriver().setup();
