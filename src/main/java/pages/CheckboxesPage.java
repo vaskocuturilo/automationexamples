@@ -10,14 +10,21 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class CheckboxesPage {
 
-
     /**
      * private Selenide Elements.
      */
-    private SelenideElement
+    private final transient SelenideElement
             checkedOne = $("form[id='checkboxes'] input:nth-child(1)"),
             checkedTwo = $("form[id='checkboxes'] input:nth-child(3)");
 
+    /**
+     * The constructor.
+     */
+    public CheckboxesPage() {
+        super();
+        //empty
+        return;
+    }
     /**
      * Checked one checked checkboxes pages.
      *

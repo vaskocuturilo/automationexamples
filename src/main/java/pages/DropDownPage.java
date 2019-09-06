@@ -19,7 +19,16 @@ public class DropDownPage {
     /**
      * private Selenide Elements.
      */
-    private SelenideElement selector = $("select[id='dropdown']");
+    private final transient SelenideElement selector = $("select[id='dropdown']");
+
+    /**
+     * The constructor.
+     */
+    public DropDownPage() {
+        super();
+        //empty
+        return;
+    }
 
     /**
      * Select text drop down pages.
@@ -27,7 +36,7 @@ public class DropDownPage {
      * @param text the text.
      * @return the drop down pages.
      */
-    public DropDownPage selectText(String text) {
+    public DropDownPage selectText(final String text) {
 
         selector.waitUntil(Condition.enabled, DELAY).selectOptionContainingText(text);
 

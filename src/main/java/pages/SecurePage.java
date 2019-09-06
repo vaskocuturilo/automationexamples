@@ -5,6 +5,10 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 
+
+/**
+ * The type Secure page.
+ */
 public class SecurePage {
 
     /**
@@ -12,8 +16,20 @@ public class SecurePage {
      */
     private static final long DELAY = 5000;
 
-    private SelenideElement
-            validationMessage = $("div[id='flash']");
+    /**
+     * The private Selenide Element.
+     */
+    private final transient SelenideElement validationMessage = $("div[id='flash']");
+
+    /**
+     * The constructor.
+     */
+    public SecurePage() {
+        super();
+        //empty
+        return;
+    }
+
     /**
      * Method checkValidationMessage.
      *

@@ -5,7 +5,6 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 
-
 /**
  * The type Dynamic controls page.
  */
@@ -32,16 +31,25 @@ public class DynamicControlsPage {
     private static final String ENABLED_TEXT = "It's enabled!";
 
     /**
-     * The private SelenideElement.
+     * The private Selenide Element.
      */
-    private SelenideElement
+    private final transient SelenideElement
 
             checkBox = $("input[type='checkbox']"),
             addRemoveCheckBox = $("button[onclick='swapCheckbox()'"),
             verifyText = $("p[id='message']"),
-            enableDisabledButton = $("button[onclick='swapInput()']"),
+            motionButton = $("button[onclick='swapInput()']"),
             inputText = $("input[type='text']");
 
+
+    /**
+     * Constructor.
+     */
+    public DynamicControlsPage() {
+        super();
+        //empty
+        return;
+    }
 
     /**
      * Click and remove check box dynamic controls page.
@@ -49,15 +57,25 @@ public class DynamicControlsPage {
      * @return the dynamic controls page.
      */
     public DynamicControlsPage clickAndRemoveCheckBox() {
-
         checkBoxSelected();
 
-        addRemoveCheckBox.shouldHave(Condition.enabled).click();
-        verifyText.waitUntil(Condition.visible, DELAY).shouldHave(Condition.text(GONE_TEXT));
-        addRemoveCheckBox.shouldHave(Condition.enabled).click();
-        verifyText.waitUntil(Condition.visible, DELAY).shouldHave(Condition.text(BACK_TEXT));
+        addRemoveCheckBox(GONE_TEXT);
+
+        addRemoveCheckBox(BACK_TEXT);
 
         return this;
+    }
+
+    /**
+     * Method add remove check box.
+     *
+     * @param text this is text for verify.
+     * @return the dynamic controls page.
+     */
+    private void addRemoveCheckBox(final String text) {
+
+        addRemoveCheckBox.shouldHave(Condition.enabled).click();
+        verifyText.waitUntil(Condition.visible, DELAY).shouldHave(Condition.text(text));
     }
 
     /**
@@ -65,11 +83,10 @@ public class DynamicControlsPage {
      *
      * @return the dynamic controls page.
      */
-    private DynamicControlsPage checkBoxSelected() {
+    private void checkBoxSelected() {
         if (!checkBox.isSelected()) {
             checkBox.click();
         }
-        return this;
     }
 
     /**
@@ -77,9 +94,9 @@ public class DynamicControlsPage {
      *
      * @return the dynamic controls page.
      */
-    public DynamicControlsPage enableDisable(String text) {
+    public DynamicControlsPage enableDisable(final String text) {
 
-        enableDisabledButton.waitUntil(Condition.enabled, DELAY).click();
+        motionButton.waitUntil(Condition.enabled, DELAY).click();
         verifyText.waitUntil(Condition.visible, DELAY).shouldHave(Condition.text(ENABLED_TEXT));
         inputText.setValue(text).pressEnter();
         inputText.shouldNotBe(Condition.enabled);

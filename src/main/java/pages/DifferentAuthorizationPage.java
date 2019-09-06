@@ -18,15 +18,23 @@ public class DifferentAuthorizationPage {
     /**
      * Private selenide element.
      */
-    private SelenideElement
-            content = $("div[id='content']");
+    private final transient SelenideElement content = $("div[id='content']");
+
+    /**
+     * The constructor.
+     */
+    public DifferentAuthorizationPage() {
+        super();
+        //empty
+        return;
+    }
 
     /**
      * Method Check validation messages basic auth.
      *
      * @return the basic auth.
      */
-    public DifferentAuthorizationPage checkValidationMessages(String text) {
+    public DifferentAuthorizationPage checkValidationMessages(final String text) {
         content.waitUntil(Condition.enabled, DELAY).shouldHave(Condition.text(text));
         return this;
     }

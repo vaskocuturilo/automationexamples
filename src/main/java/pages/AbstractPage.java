@@ -39,7 +39,7 @@ public abstract class AbstractPage extends BaseWebClass {
      *
      * @param url the url
      */
-    public void openPage(final String url, String username, String password) {
+    public void openPage(final String url, final String username, final String password) {
         Selenide.open(url, "", username, password);
         assertEquals("The Internet", getTitlePage());
 

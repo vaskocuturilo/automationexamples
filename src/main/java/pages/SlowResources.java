@@ -9,7 +9,6 @@ import static org.hamcrest.Matchers.nullValue;
  */
 public class SlowResources extends AbstractController {
 
-
     /**
      * Constant SUCCESS.
      */
@@ -19,6 +18,15 @@ public class SlowResources extends AbstractController {
      * Constant BAD_REQUEST.
      */
     private static final int BAD_REQUEST = 503;
+
+    /**
+     * The constructor.
+     */
+    public SlowResources() {
+        super();
+        //empty
+        return;
+    }
 
     /**
      * Gets element.
@@ -31,4 +39,13 @@ public class SlowResources extends AbstractController {
                 spec(resSpec).statusCode(SUCCESS).body("$", nullValue()).statusCode(BAD_REQUEST).log().ifError();
     }
 
+
+    @Override
+    /**
+     * Abstract method.
+     *
+     * @return the element
+     */
+    protected void abstractMethod() {
+    }
 }

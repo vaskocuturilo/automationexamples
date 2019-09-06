@@ -2,6 +2,7 @@ package base;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 import java.util.logging.Logger;
 
@@ -32,7 +33,7 @@ public class BaseWebClass {
     /**
      * Method Start process.
      */
-    @BeforeMethod(alwaysRun = true)
+    @BeforeTest(alwaysRun = true)
     public void startProcess() {
         baseUrl = "http://the-internet.herokuapp.com";
         selectBrowser("Chrome");

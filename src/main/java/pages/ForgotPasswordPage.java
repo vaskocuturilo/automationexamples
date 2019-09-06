@@ -16,10 +16,17 @@ public class ForgotPasswordPage {
     /**
      * The private Selenide element.
      */
-    private SelenideElement
+    private final transient SelenideElement email = $("input[id='email']");
 
-            email = $("input[id='email']");
 
+    /**
+     * The constructor.
+     */
+    public ForgotPasswordPage() {
+        super();
+        //empty
+        return;
+    }
 
     /**
      * Generate random email.

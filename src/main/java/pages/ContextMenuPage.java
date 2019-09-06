@@ -12,11 +12,19 @@ import static org.testng.Assert.assertEquals;
  */
 public class ContextMenuPage {
 
-
     /**
      * private Selenide element.
      */
-    private SelenideElement hotSpot = $("div[id='hot-spot']");
+    private final transient SelenideElement hotSpot = $("div[id='hot-spot']");
+
+    /**
+     * The constructor.
+     */
+    public ContextMenuPage() {
+        super();
+        //empty
+        return;
+    }
 
     /**
      * Open context menu context menu pages.

@@ -6,13 +6,30 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
 import static org.testng.Assert.assertEquals;
 
+/**
+ * The type Redirect page.
+ */
 public class RedirectPage {
 
-    private SelenideElement
+    /**
+     * The privaye Selenide Element.
+     */
+    private final transient SelenideElement content = $("div[id='content']");
 
-            content = $("div[id='content']");
+    /**
+     * The constructor.
+     */
+    public RedirectPage() {
+        super();
+        //empty
+        return;
+    }
 
-
+    /**
+     * Check status code redirect page.
+     *
+     * @return the redirect page
+     */
     public RedirectPage checkStatusCode() {
 
         assertEquals("Status Codes", content.$("h3").getText());

@@ -12,15 +12,21 @@ import static org.testng.Assert.assertEquals;
  */
 public class DragAndDropPage {
 
-
     /**
      * Private Selenide Elements.
      */
-    private SelenideElement
-
+    private final transient SelenideElement
             rectangleOne = $("div[id='column-a']"),
             rectangleTwo = $("div[id='column-b']");
 
+    /**
+     * The constructor.
+     */
+    public DragAndDropPage() {
+        super();
+        //empty
+        return;
+    }
 
     /**
      * Method checkContextRectangles.
@@ -29,7 +35,7 @@ public class DragAndDropPage {
      * @param target target.
      * @return the drag and drop pages
      */
-    private DragAndDropPage checkContextRectangles(String source, String target) {
+    private DragAndDropPage checkContextRectangles(final String source, final String target) {
 
         assertEquals(source, rectangleOne.getText());
 

@@ -16,6 +16,8 @@ public class AvailableExamplesTests extends AbstractPage {
 
     private final File fileForUpload = new File("src/main/resources/uploadFile.png");
 
+    private static final String TEST = "test";
+
 
     @Test(dataProvider = "loginCred", dataProviderClass = DataProviders.class)
     @Story("Login automation script.")
@@ -61,7 +63,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Broken images")
+    @Story("Broken images.")
     public void testBrokenImages() {
         openPage("/broken_images");
         new BrokenImages()
@@ -69,7 +71,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Check boxes")
+    @Story("Check boxes.")
     public void testChecked() {
         openPage("/checkboxes");
         new CheckboxesPage()
@@ -78,7 +80,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Context menu")
+    @Story("Context menu.")
     public void testContextMenu() {
         openPage("/context_menu");
         new ContextMenuPage()
@@ -86,7 +88,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Digest Auth")
+    @Story("Digest Auth.")
     public void testDigestAuthentication() {
         openPage("/digest_auth", "admin", "admin");
         new DifferentAuthorizationPage()
@@ -94,7 +96,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Drag and Drop")
+    @Story("Drag and Drop.")
     public void testDragAndDrop() {
         openPage("/drag_and_drop");
         new DragAndDropPage()
@@ -102,7 +104,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test(dataProvider = "dataForSelector", dataProviderClass = DataProviders.class)
-    @Story("Dropdown List")
+    @Story("Dropdown List.")
     public void testDropdownList(String selector) {
         openPage("/dropdown");
         new DropDownPage()
@@ -110,7 +112,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Entry Ad")
+    @Story("Entry Ad.")
     public void testEntryAd() {
         openPage("/entry_ad");
         new ModalWindowPage()
@@ -118,7 +120,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Forgot Password")
+    @Story("Forgot Password.")
     public void testForgotPassword() {
         openPage("/forgot_password");
         new ForgotPasswordPage()
@@ -127,7 +129,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("JavaScript alerts")
+    @Story("JavaScript alerts.")
     public void testJSAlerts() {
         openPage("/javascript_alerts");
         new AlertsPage()
@@ -138,7 +140,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Key Presses")
+    @Story("Key Presses.")
     public void testKeyPresses() {
         openPage("/key_presses");
         new KeyPressesPage()
@@ -146,24 +148,22 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Redirection")
+    @Story("Redirection.")
     public void testRedirection() {
         openPage("/redirector");
         new RedirectionPage()
                 .usingRedirection();
-
-
     }
 
     @Test
-    @Story("Slow Resources")
+    @Story("Slow Resources.")
     public void testSlowResources() {
         new SlowResources()
                 .checkThatResourcesIsVerySlow();
     }
 
     @Test
-    @Story("Status Codes")
+    @Story("Status Codes.")
     public void testStatusCode() {
         openPage("/status_codes");
         new StatusCodePage()
@@ -171,7 +171,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Upload file")
+    @Story("Upload file.")
     public void testUploadFile() {
         openPage("/upload");
         new UploadFile()
@@ -179,7 +179,7 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Disappearing elements")
+    @Story("Disappearing elements.")
     public void testDisappearingElements() {
         openPage("/disappearing_elements");
         new DisappearingElementsPage()
@@ -187,12 +187,19 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Dynamic Controls")
+    @Story("Dynamic Controls.")
     public void testDynamicControls() {
         openPage("/dynamic_controls");
         new DynamicControlsPage()
                 .clickAndRemoveCheckBox()
-                .enableDisable("test");
+                .enableDisable(TEST);
     }
 
+    @Test
+    @Story("Dynamically Loaded Page Elements.")
+    public void testDynamicallyLoadedPageElements() {
+        openPage("/dynamic_loading");
+        new DynamicLoadingPage()
+                .checkElement();
+    }
 }

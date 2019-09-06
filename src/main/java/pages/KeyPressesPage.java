@@ -25,10 +25,18 @@ public class KeyPressesPage {
     /**
      * The private Selenide elements.
      */
-    private SelenideElement
+    private final transient SelenideElement
             inputForKeys = $("input[id='target']"),
             result = $("p[id='result']");
 
+    /**
+     * The constructor.
+     */
+    public KeyPressesPage() {
+        super();
+        //empty
+        return;
+    }
 
     /**
      * Use key button key presses page.

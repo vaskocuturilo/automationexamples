@@ -6,18 +6,45 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
 import static org.testng.Assert.assertEquals;
 
+/**
+ * The type Redirection page.
+ */
 public class RedirectionPage {
 
+    /**
+     * The private Selenide Element.
+     */
+    private final transient SelenideElement content = $("div[id='content']");
 
-    private static SelenideElement
+    /**
+     * The constant HERE.
+     */
+    private static final String HERE = "here";
 
-    content = $("div[id='content']");
+    /**
+     * The constant REDIRECT.
+     */
+    private static final String REDIRECT = "Redirection";
 
-    public RedirectPage usingRedirection(){
+    /**
+     * The constructor.
+     */
+    public RedirectionPage() {
+        super();
+        //empty
+        return;
+    }
 
-        assertEquals("Redirection", content.$("h3").getText());
+    /**
+     * Using redirection redirect page.
+     *
+     * @return the redirect page
+     */
+    public RedirectPage usingRedirection() {
 
-        content.$("a").shouldHave(Condition.text("here")).click();
+        assertEquals(REDIRECT, content.$("h3").getText());
+
+        content.$("a").shouldHave(Condition.text(HERE)).click();
 
         return new RedirectPage();
     }

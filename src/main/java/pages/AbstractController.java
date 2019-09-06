@@ -7,6 +7,10 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.hamcrest.Matchers;
 
+
+/**
+ * The type Abstract controller.
+ */
 public abstract class AbstractController {
 
     /**
@@ -45,4 +49,9 @@ public abstract class AbstractController {
         //empty
         return;
     }
+
+    /**
+     * Abstract method.
+     */
+    protected abstract void abstractMethod();
 }

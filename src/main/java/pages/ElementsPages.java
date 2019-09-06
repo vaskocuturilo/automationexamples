@@ -14,7 +14,7 @@ public class ElementsPages {
     /**
      * The private Selenide Elements.
      */
-    private SelenideElement
+    private final transient SelenideElement
             addElementButton = $("button[onclick='addElement()']"),
             deleteElementButton = $("button[onclick='deleteElement()']");
 

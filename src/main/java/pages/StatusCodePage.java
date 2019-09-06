@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.WebDriverRunner.url;
@@ -16,13 +17,21 @@ public class StatusCodePage {
     /**
      * The private ElementsCollection.
      */
-    private ElementsCollection content = $$("div[id='content'] li a");
+    private final transient ElementsCollection content = $$("div[id='content'] li a");
 
     /**
      * The private Selenide Element.
      */
-    private SelenideElement linkContent = $("div[id='content'] a");
+    private final transient SelenideElement linkContent = $("div[id='content'] a");
 
+    /**
+     * The constructor.
+     */
+    public StatusCodePage() {
+        super();
+        //empty
+        return;
+    }
 
     /**
      * Check list status code page.
@@ -32,7 +41,7 @@ public class StatusCodePage {
     public StatusCodePage checkStatusCodeContent() {
 
         for (int i = 0; i < content.toArray().length; i++) {
-            String statusCode = content.get(i).getText();
+            final String statusCode = content.get(i).getText();
             content.get(i).click();
             assertTrue(url().contains("/status_codes/" + statusCode));
             linkContent.click();

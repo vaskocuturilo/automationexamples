@@ -15,7 +15,7 @@ public class UploadFile {
     /**
      * The private selenide element.
      */
-    private SelenideElement uploadFile = $("input[id='file-upload']");
+    private final transient SelenideElement uploadFile = $("input[id='file-upload']");
 
     /**
      * Default constructor.

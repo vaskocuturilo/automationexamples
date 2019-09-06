@@ -19,12 +19,12 @@ public class DisappearingElementsPage {
     /**
      * Private selenide element .
      */
-    private ElementsCollection listOfElementsFromHeader = $$("div[id='content'] li");
+    private final transient ElementsCollection listOfElementsFromHeader = $$("div[id='content'] li");
 
     /**
      * Constant verifyText.
      */
-    private SelenideElement verifyText = $("h1");
+    private final transient SelenideElement verifyText = $("h1");
 
     /**
      * Constant TEXT.

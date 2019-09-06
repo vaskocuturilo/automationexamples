@@ -5,22 +5,44 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 
+
+/**
+ * The type Email sent page.
+ */
 public class EmailSentPage {
 
+    /**
+     * The constant TEXT.
+     */
     private static final String TEXT = "Your e-mail's been sent!";
 
+    /**
+     * The constant DELAY.
+     */
+    private static final long DELAY = 5000;
 
-    private SelenideElement
+    /**
+     * The private Selenide Element.
+     */
+    private final transient SelenideElement content = $("div[id='content']");
 
-    content = $("div[id='content']");
+    /**
+     * The constructor.
+     */
+    public EmailSentPage() {
+        super();
+        //empty
+        return;
+    }
 
-
-    public EmailSentPage confirmationSent(){
-
-        content.waitUntil(Condition.visible, 5000).shouldHave(Condition.text(TEXT));
-
-
-    return this;
+    /**
+     * Confirmation sent email sent page.
+     *
+     * @return the email sent page
+     */
+    public EmailSentPage confirmationSent() {
+        content.waitUntil(Condition.visible, DELAY).shouldHave(Condition.text(TEXT));
+        return this;
     }
 
 }
