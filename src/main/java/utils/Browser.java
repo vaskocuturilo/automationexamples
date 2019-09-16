@@ -2,6 +2,7 @@ package utils;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 
 /**
@@ -37,8 +38,7 @@ public final class Browser {
 
         if ("Chrome".equals(browser)) {
             WebDriverManager.chromedriver().setup();
-            Configuration.browser = "Chrome";
-            Configuration.timeout = TIME_OUT;
+            Configuration.browser = "chrome";
         } else if ("Firefox".equals(browser)) {
             WebDriverManager.firefoxdriver().setup();
             Configuration.browser = "Firefox";

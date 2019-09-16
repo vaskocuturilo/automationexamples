@@ -202,4 +202,13 @@ public class AvailableExamplesTests extends AbstractPage {
         new DynamicLoadingPage()
                 .checkElement();
     }
+
+    @Test
+    @Story("Exit Intent")
+    public void testExitIntent() {
+        openPage("/exit_intent");
+        new ExitIntent()
+                .moveMouseOutViewportPanel();
+    }
+
 }
