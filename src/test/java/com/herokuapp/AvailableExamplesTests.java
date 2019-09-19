@@ -103,12 +103,12 @@ public class AvailableExamplesTests extends AbstractPage {
                 .moveToElements();
     }
 
-    @Test(dataProvider = "dataForSelector", dataProviderClass = DataProviders.class)
+    @Test()
     @Story("Dropdown List.")
-    public void testDropdownList(String selector) {
+    public void testDropdownList() {
         openPage("/dropdown");
         new DropDownPage()
-                .selectText(selector);
+                .selectFromDropDown(DropdownList.OptionTwo);
     }
 
     @Test

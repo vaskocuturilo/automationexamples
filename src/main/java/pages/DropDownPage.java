@@ -5,7 +5,6 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 
-
 /**
  * The class Drop down pages.
  */
@@ -30,16 +29,26 @@ public class DropDownPage {
         return;
     }
 
-    /**
-     * Select text drop down pages.
-     *
-     * @param text the text.
-     * @return the drop down pages.
-     */
-    public DropDownPage selectText(final String text) {
 
-        selector.waitUntil(Condition.enabled, DELAY).selectOptionContainingText(text);
+    /**
+     * Method select from drop down.
+     *
+     * @param dropdownList select form drop down list.
+     * @return the drop down page.
+     */
+    public DropDownPage selectFromDropDown(final DropdownList dropdownList) {
+        selectFromListByName(dropdownList);
 
         return this;
+    }
+
+    /**
+     * Method select from list by name.
+     *
+     * @param dropdownList select form drop down list.
+     */
+    private void selectFromListByName(final DropdownList dropdownList) {
+        $(selector).waitUntil(Condition.visible, DELAY).click();
+        $(selector).selectOptionContainingText(dropdownList.getDropDown());
     }
 }
