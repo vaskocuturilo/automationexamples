@@ -204,11 +204,21 @@ public class AvailableExamplesTests extends AbstractPage {
     }
 
     @Test
-    @Story("Exit Intent")
+    @Story("Exit Intent.")
     public void testExitIntent() {
         openPage("/exit_intent");
         new ExitIntent()
                 .moveMouseOutViewportPanel();
+    }
+
+    @Test
+    @Story("Notification Message.")
+    public void testNotificationMessage() {
+        openPage("/notification_message_rendered");
+        new NotificationMessage()
+                .checkNotificationMessage();
+
+
     }
 
 }
