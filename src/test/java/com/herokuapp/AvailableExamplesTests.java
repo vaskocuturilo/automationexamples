@@ -217,8 +217,14 @@ public class AvailableExamplesTests extends AbstractPage {
         openPage("/notification_message_rendered");
         new NotificationMessage()
                 .checkNotificationMessage();
+    }
 
-
+    @Test
+    @Story("Inputs.")
+    public void testInputs() {
+        openPage("/inputs");
+        new InputsPage()
+                .addNumber("100");
     }
 
 }
