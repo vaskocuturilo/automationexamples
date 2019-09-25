@@ -30,6 +30,8 @@ public class ElementsPages {
 
     /**
      * The private method addElement.
+     *
+     * @return this.
      */
     private ElementsPages addElement() {
         addElementButton.click();
@@ -39,6 +41,8 @@ public class ElementsPages {
 
     /**
      * The private method deleteElement.
+     *
+     * @return this.
      */
     private ElementsPages deleteElement() {
 

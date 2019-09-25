@@ -30,6 +30,8 @@ public class BrokenImages {
 
     /**
      * Method checkWhichImagesIsBroken.
+     *
+     * @return this.
      */
     public BrokenImages checkWhichImagesIsBroken() {
         for (final SelenideElement totalImages : $$("div[class='example'] img")) {
@@ -41,6 +43,8 @@ public class BrokenImages {
 
     /**
      * Method isImageBroken.
+     *
+     * @param inputImages thi is input images.
      */
     private void isImageBroken(final SelenideElement inputImages) {
         if (inputImages.getAttribute("naturalWidth").equals("0")) {

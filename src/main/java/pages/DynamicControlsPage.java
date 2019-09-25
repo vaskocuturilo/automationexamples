@@ -70,7 +70,6 @@ public class DynamicControlsPage {
      * Method add remove check box.
      *
      * @param text this is text for verify.
-     * @return the dynamic controls page.
      */
     private void addRemoveCheckBox(final String text) {
 
@@ -80,8 +79,6 @@ public class DynamicControlsPage {
 
     /**
      * Method check box selected.
-     *
-     * @return the dynamic controls page.
      */
     private void checkBoxSelected() {
         if (!checkBox.isSelected()) {
@@ -92,6 +89,7 @@ public class DynamicControlsPage {
     /**
      * Method for enable/disable input.
      *
+     * @param text thi is text.
      * @return the dynamic controls page.
      */
     public DynamicControlsPage enableDisable(final String text) {

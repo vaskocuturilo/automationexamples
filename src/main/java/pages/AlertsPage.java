@@ -47,7 +47,7 @@ public class AlertsPage {
      *
      * @return the alerts page
      */
-    public AlertsPage JSAlerts() {
+    public AlertsPage javaScriptAlerts() {
 
         alert.click();
         switchTo().alert().accept();
@@ -61,7 +61,7 @@ public class AlertsPage {
      *
      * @return the alerts page
      */
-    public AlertsPage JSConfirm() {
+    public AlertsPage javaScriptConfirm() {
 
         confirm.click();
         switchTo().alert().accept();
@@ -74,7 +74,7 @@ public class AlertsPage {
      *
      * @return the alerts page
      */
-    public AlertsPage JSPrompt() {
+    public AlertsPage javaScriptPrompt() {
 
         prompt.click();
         switchTo().alert().sendKeys(TEXT);

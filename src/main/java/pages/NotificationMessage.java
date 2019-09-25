@@ -57,7 +57,6 @@ public class NotificationMessage {
      * Method checkTextOnPage.
      *
      * @param textMessage this is text message for check assert.
-     * @return the notification message.
      */
     private void checkTextOnPage(final String textMessage) {
 

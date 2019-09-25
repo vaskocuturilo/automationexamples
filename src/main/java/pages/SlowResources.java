@@ -29,9 +29,7 @@ public class SlowResources extends AbstractController {
     }
 
     /**
-     * Gets element.
-     *
-     * @return the element
+     * Method checkThatResourcesIsVerySlow.
      */
     public void checkThatResourcesIsVerySlow() {
 

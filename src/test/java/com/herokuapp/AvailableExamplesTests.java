@@ -133,9 +133,9 @@ public class AvailableExamplesTests extends AbstractPage {
     public void testJSAlerts() {
         openPage("/javascript_alerts");
         new AlertsPage()
-                .JSAlerts()
-                .JSConfirm()
-                .JSPrompt()
+                .javaScriptAlerts()
+                .javaScriptConfirm()
+                .javaScriptPrompt()
                 .confirmationResult();
     }
 

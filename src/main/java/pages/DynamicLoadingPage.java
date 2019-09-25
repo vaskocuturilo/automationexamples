@@ -57,7 +57,6 @@ public class DynamicLoadingPage {
      * Check that element is hidden dynamic loading page.
      *
      * @param link this is selenide element for click.
-     * @return the dynamic loading page
      */
     private void loadedRenderElement(final SelenideElement link) {
         link.click();

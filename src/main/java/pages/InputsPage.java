@@ -27,6 +27,7 @@ public class InputsPage {
      * Method Set Number.
      *
      * @param inputNumber the input number.
+     * @return this.
      */
     public InputsPage addNumber(final String inputNumber) {
 

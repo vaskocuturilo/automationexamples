@@ -37,6 +37,8 @@ public class TablePage {
 
     /**
      * The method sorting.
+     *
+     * @return this.
      */
     private TablePage sorting() {
 
@@ -47,6 +49,11 @@ public class TablePage {
     }
 
 
+    /**
+     * Method sortHeaderAscending.
+     *
+     * @return this.
+     */
     private TablePage sortHeaderAscending() {
 
         header.click();
@@ -57,7 +64,7 @@ public class TablePage {
     /**
      * Assert result table page.
      *
-     * @return the table page
+     * @return the table page.
      */
     public TablePage assertResult() {
         sorting();
