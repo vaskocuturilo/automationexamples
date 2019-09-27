@@ -227,4 +227,12 @@ public class AvailableExamplesTests extends AbstractPage {
                 .addNumber("100");
     }
 
+    @Test
+    @Story("JQuery Menu.")
+    public void testJQueryMenu() {
+        openPage("/jqueryui/menu#");
+        new JqueryMenu()
+                .openMenu()
+                .checkContentMenu();
+    }
 }
