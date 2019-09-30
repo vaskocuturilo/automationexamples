@@ -19,7 +19,7 @@ public class DisappearingElementsPage {
     /**
      * Private selenide element .
      */
-    private final transient ElementsCollection listOfElementsFromHeader = $$("div[id='content'] li");
+    private final transient ElementsCollection elementsHeader = $$("div[id='content'] li");
 
     /**
      * Constant verifyText.
@@ -52,9 +52,9 @@ public class DisappearingElementsPage {
      */
     public DisappearingElementsPage assertPagesAfterTransition() {
 
-        for (int i = 1; i < listOfElementsFromHeader.toArray().length; i++) {
+        for (int i = 1; i < elementsHeader.toArray().length; i++) {
 
-            listOfElementsFromHeader.get(i).click();
+            elementsHeader.get(i).click();
             verifyText.waitUntil(Condition.visible, DELAY).shouldHave(Condition.text(TEXT));
             assertTrue(url().contains("/"));
             WebDriverRunner.getWebDriver().navigate().back();

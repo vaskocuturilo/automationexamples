@@ -108,7 +108,7 @@ public class AvailableExamplesTests extends AbstractPage {
     public void testDropdownList() {
         openPage("/dropdown");
         new DropDownPage()
-                .selectFromDropDown(DropdownList.OptionTwo);
+                .selectFromDropDown(DropdownList.OPTION_TWO);
     }
 
     @Test

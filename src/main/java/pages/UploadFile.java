@@ -15,7 +15,7 @@ public class UploadFile {
     /**
      * The private selenide element.
      */
-    private final transient SelenideElement uploadFile = $("input[id='file-upload']");
+    private final transient SelenideElement fileForUpload = $("input[id='file-upload']");
 
     /**
      * Default constructor.
@@ -33,7 +33,7 @@ public class UploadFile {
      * @return the upload file
      */
     public UploadFile checkUploadFile(final File fileForUpload) {
-        uploadFile.uploadFile(fileForUpload);
+        this.fileForUpload.uploadFile(fileForUpload);
 
         return this;
     }

@@ -17,6 +17,15 @@ public class ExitIntent {
     private final transient SelenideElement close = $("div[id='ouibounce-modal'] div[class='modal-footer'] p");
 
     /**
+     * The default constructor.
+     */
+    public ExitIntent() {
+        super();
+        //empty
+        return;
+    }
+
+    /**
      * Mouse move exit intent.
      *
      * @return the exit intent

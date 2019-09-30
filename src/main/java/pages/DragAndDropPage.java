@@ -32,10 +32,9 @@ public class DragAndDropPage {
      * Method checkContextRectangles.
      *
      * @param source source.
-     * @param target target.
      * @return the drag and drop pages
      */
-    private DragAndDropPage checkContextRectangles(final String source, final String target) {
+    private DragAndDropPage checkContextRectangles(final String source) {
 
         assertEquals(source, rectangleOne.getText());
 
@@ -48,7 +47,7 @@ public class DragAndDropPage {
      * @return the drag and drop pages
      */
     public DragAndDropPage moveToElements() {
-        checkContextRectangles("A", "B");
+        checkContextRectangles("A");
 
         actions().clickAndHold(rectangleOne).moveToElement(rectangleTwo).build().perform();
 

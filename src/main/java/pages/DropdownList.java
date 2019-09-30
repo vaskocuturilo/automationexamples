@@ -8,12 +8,12 @@ public enum DropdownList {
     /**
      * Enum value Option 1.
      */
-    OptionOne("Option 1"),
+    OPTION_ONE("Option 1"),
 
     /**
      * Enum value Option 2.
      */
-    OptionTwo("Option 2");
+    OPTION_TWO("Option 2");
 
 
     /**
