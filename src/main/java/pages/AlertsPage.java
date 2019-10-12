@@ -26,9 +26,7 @@ public class AlertsPage {
     /**
      * The private Selenide elements.
      */
-    private final transient SelenideElement
-
-            alert = $("button[onclick='jsAlert()']"),
+    private final transient SelenideElement alert = $("button[onclick='jsAlert()']"),
             confirm = $("button[onclick='jsConfirm()']"),
             prompt = $("button[onclick='jsPrompt()']"),
             result = $("p[id='result']");

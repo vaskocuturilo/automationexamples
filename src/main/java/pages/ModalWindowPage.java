@@ -11,6 +11,11 @@ import static com.codeborne.selenide.Selenide.$;
 public class ModalWindowPage {
 
     /**
+     * The constant DELAY.
+     */
+    private static final long DELAY = 5000;
+
+    /**
      * The constant TEXT.
      */
     private static final String TEXT = "It's commonly used to encourage a user to take an action (e.g., give their e-mail address to sign up for something or disable their ad blocker).";
@@ -39,7 +44,7 @@ public class ModalWindowPage {
      */
     public ModalWindowPage assertAndCloseModalWindow() {
 
-        textOnModalWindow.waitUntil(Condition.visible, 5000).shouldHave(Condition.text(TEXT));
+        textOnModalWindow.waitUntil(Condition.visible, DELAY).shouldHave(Condition.text(TEXT));
         closeModalWindow.click();
 
         return this;

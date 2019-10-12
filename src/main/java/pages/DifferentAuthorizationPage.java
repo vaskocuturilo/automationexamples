@@ -32,6 +32,7 @@ public class DifferentAuthorizationPage {
     /**
      * Method Check validation messages basic auth.
      *
+     * @param text thi si text for method.
      * @return the basic auth.
      */
     public DifferentAuthorizationPage checkValidationMessages(final String text) {

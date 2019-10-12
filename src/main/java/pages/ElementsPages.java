@@ -12,6 +12,11 @@ import static com.codeborne.selenide.Selenide.$;
 public class ElementsPages {
 
     /**
+     * The constant DELAY.
+     */
+    private static final long DELAY = 5000;
+
+    /**
      * The private Selenide Elements.
      */
     private final transient SelenideElement
@@ -46,7 +51,7 @@ public class ElementsPages {
      */
     private ElementsPages deleteElement() {
 
-        deleteElementButton.waitUntil(Condition.enabled, 5000).click();
+        deleteElementButton.waitUntil(Condition.enabled, DELAY).click();
         return this;
     }
 

@@ -1,7 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.sun.istack.internal.NotNull;
+import com.sun.istack.NotNull;
 
 import java.util.Date;
 
