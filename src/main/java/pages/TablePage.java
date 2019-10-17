@@ -88,15 +88,15 @@ public class TablePage {
         header.click();
         final List<String> expectedSorting = sortingElements.texts();
         Collections.reverse(expectedSorting);
-        final List<String> actualDescendingSort = sortingElements.texts();
-        assertResultHaveTheSameSorting(expectedSorting, actualDescendingSort);
+        final List<String> actualSort = sortingElements.texts();
+        assertResultHaveTheSameSorting(expectedSorting, actualSort);
 
         return this;
     }
 
-    private TablePage assertResultHaveTheSameSorting(final List<String> firstNameColumnExpectedSort,
-                                                     final List<String> firstNameColumnActualSort) {
-        assertEquals(firstNameColumnExpectedSort, firstNameColumnActualSort);
+    private TablePage assertResultHaveTheSameSorting(final List<String> firstExpectedSort,
+                                                     final List<String> firstActualSort) {
+        assertEquals(firstExpectedSort, firstActualSort);
         return this;
     }
 }

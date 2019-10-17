@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 /**
  * The class Elements pages.
  */
-public class ElementsPages {
+public class ElementsPage {
 
     /**
      * The constant DELAY.
@@ -21,13 +21,13 @@ public class ElementsPages {
      */
     private final transient SelenideElement
             addElementButton = $("button[onclick='addElement()']"),
-            deleteElementButton = $("button[onclick='deleteElement()']");
+            delete = $("button[onclick='deleteElement()']");
 
 
     /**
      * Default constructor.
      */
-    public ElementsPages() {
+    public ElementsPage() {
         super();
         //empty
         return;
@@ -38,7 +38,7 @@ public class ElementsPages {
      *
      * @return this.
      */
-    private ElementsPages addElement() {
+    private ElementsPage addElement() {
         addElementButton.click();
 
         return this;
@@ -49,9 +49,9 @@ public class ElementsPages {
      *
      * @return this.
      */
-    private ElementsPages deleteElement() {
+    private ElementsPage deleteElement() {
 
-        deleteElementButton.waitUntil(Condition.enabled, DELAY).click();
+        delete.waitUntil(Condition.enabled, DELAY).click();
         return this;
     }
 
@@ -60,7 +60,7 @@ public class ElementsPages {
      *
      * @return the elements pages
      */
-    public ElementsPages actionItems() {
+    public ElementsPage actionItems() {
         addElement();
         deleteElement();
 

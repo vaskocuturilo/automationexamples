@@ -50,7 +50,7 @@ public class AvailableExamplesTests extends AbstractPage {
     @Story("Add/Remove Elements.")
     public void testAddRemoveElements() {
         openPage("/add_remove_elements/");
-        new ElementsPages()
+        new ElementsPage()
                 .actionItems();
     }
 
