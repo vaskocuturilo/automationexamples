@@ -3,9 +3,8 @@ package utils;
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
 /**
- * The type Select browser.
+ * The class Select browser.
  */
 @SuppressWarnings("PMD.LawOfDemeter")
 public final class Browser {

@@ -20,6 +20,11 @@ public class JqueryMenu {
     private static final long DELAY = 5000;
 
     /**
+     * The constant SIZE.
+     */
+    private static final int SIZE = 3;
+
+    /**
      * The constant TEXT.
      */
     private static final String TEXT = "Menu";
@@ -73,7 +78,7 @@ public class JqueryMenu {
         linkMenu.click();
         enabled.click();
         downloads.click();
-        typeFiles.shouldHaveSize(3);
+        typeFiles.shouldHaveSize(SIZE);
         typeFiles.shouldHave(CollectionCondition.textsInAnyOrder("PDF", "CSV", "EXCEL"));
 
         return this;
