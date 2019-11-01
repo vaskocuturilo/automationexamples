@@ -235,4 +235,22 @@ public class AvailableExamplesTests extends AbstractPage {
                 .openMenu()
                 .checkContentMenu();
     }
+
+    @Test
+    @Story("Horizontal Slider.")
+    public void testHorizontalSlider() {
+        openPage("/horizontal_slider");
+        new HorizontalSliderPage()
+                .moveSlider(30);
+    }
+
+    @Test
+    @Story("Multiple Windows.")
+    public void testMultipleWindows() {
+        openPage("/windows");
+        new MultipleWindows()
+                .checkThatOpenMainWindow()
+                .openNewWindow()
+                .checkThatOpenNewWindow();
+    }
 }
