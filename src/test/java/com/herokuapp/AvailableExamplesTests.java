@@ -253,4 +253,12 @@ public class AvailableExamplesTests extends AbstractPage {
                 .openNewWindow()
                 .checkThatOpenNewWindow();
     }
+
+    @Test
+    @Story("Javascript Error.")
+    public void testJavascriptError() {
+        openPageWithTitle("/javascript_error", "Page with JavaScript errors on load");
+        new JavascriptErrorPage()
+                .checkTextOnPageAndGetErrors();
+    }
 }

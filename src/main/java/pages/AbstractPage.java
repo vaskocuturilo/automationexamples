@@ -31,7 +31,16 @@ public abstract class AbstractPage extends BaseWebClass {
     public void openPage(final String url) {
         Selenide.open(url);
         assertEquals("The Internet", getTitlePage());
+    }
 
+    /**
+     * Method Open pages.
+     *
+     * @param url the url
+     */
+    public void openPageWithTitle(final String url, final String currentTitle) {
+        Selenide.open(url);
+        assertEquals(currentTitle, getTitlePage());
     }
 
     /**
