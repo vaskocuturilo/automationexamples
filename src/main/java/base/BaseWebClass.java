@@ -1,7 +1,9 @@
 package base;
 
+import listener.AllureScreenShooter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 
 import java.util.logging.Logger;
 
@@ -13,6 +15,7 @@ import static utils.Browser.selectBrowser;
 /**
  * The class Base web class.
  */
+@Listeners(AllureScreenShooter.class)
 public class BaseWebClass {
 
     /**
