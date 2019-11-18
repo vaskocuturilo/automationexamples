@@ -1,4 +1,4 @@
-package utils;
+package browser;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;

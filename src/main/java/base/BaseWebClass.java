@@ -1,5 +1,8 @@
 package base;
 
+import browser.Chrome;
+import com.codeborne.selenide.Configuration;
+import environment.Environment;
 import listener.AllureScreenShooter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -9,7 +12,7 @@ import java.util.logging.Logger;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.WebDriverRunner.*;
-import static utils.Browser.selectBrowser;
+import static browser.Browser.selectBrowser;
 
 
 /**
@@ -38,8 +41,12 @@ public class BaseWebClass {
     @BeforeTest(alwaysRun = true)
     public void startProcess() {
         baseUrl = "http://the-internet.herokuapp.com";
-        selectBrowser("Chrome");
-        clearBrowserCache();
+        if (Environment.isCheckOperationSystem()) {
+            Configuration.browser = Chrome.class.getName();
+        } else {
+            selectBrowser("Chrome");
+            clearBrowserCache();
+        }
     }
 
     /**
