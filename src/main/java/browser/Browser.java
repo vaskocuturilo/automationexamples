@@ -33,7 +33,6 @@ public final class Browser {
      */
     public static void selectBrowser(final String browser) {
         Configuration.browserSize = BROWSER_SIZE;
-
         if ("Chrome".equals(browser)) {
             WebDriverManager.chromedriver().setup();
             Configuration.browser = "chrome";

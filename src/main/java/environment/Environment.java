@@ -1,6 +1,8 @@
 package environment;
 
 
+import java.util.Locale;
+
 /**
  * The class Environment.
  */
@@ -15,7 +17,7 @@ public class Environment {
      */
     public static boolean isCheckOperationSystem() {
 
-        final String systemName = System.getProperty("os.name").toLowerCase();
+        final String systemName = System.getProperty("os.name").toLowerCase(Locale.ROOT);
 
         return (systemName.contains("nix") || systemName.contains("nux"));
     }

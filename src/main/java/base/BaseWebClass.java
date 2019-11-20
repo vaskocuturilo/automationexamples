@@ -1,6 +1,6 @@
 package base;
 
-import browser.Chrome;
+import browser.Remote;
 import com.codeborne.selenide.Configuration;
 import environment.Environment;
 import listener.AllureScreenShooter;
@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.WebDriverRunner.*;
 import static browser.Browser.selectBrowser;
+import static utils.PropertiesReader.loadProperty;
 
 
 /**
@@ -40,9 +41,9 @@ public class BaseWebClass {
      */
     @BeforeTest(alwaysRun = true)
     public void startProcess() {
-        baseUrl = "http://the-internet.herokuapp.com";
+        baseUrl = loadProperty("URL");
         if (Environment.isCheckOperationSystem()) {
-            Configuration.browser = Chrome.class.getName();
+            Configuration.browser = Remote.class.getName();
         } else {
             selectBrowser("Chrome");
             clearBrowserCache();
