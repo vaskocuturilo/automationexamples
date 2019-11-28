@@ -20,17 +20,17 @@ import static utils.PropertiesReader.loadProperty;
  * The class Base web class.
  */
 @Listeners(AllureScreenShooter.class)
-public class BaseWebClass {
+public class BaseWeb {
 
     /**
      * The constant LOG.
      */
-    private static final Logger LOG = Logger.getLogger(BaseWebClass.class.getName());
+    private static final Logger LOG = Logger.getLogger(BaseWeb.class.getName());
 
     /**
      * Default constructor.
      */
-    public BaseWebClass() {
+    public BaseWeb() {
         super();
         //empty
         return;
@@ -42,7 +42,7 @@ public class BaseWebClass {
     @BeforeTest(alwaysRun = true)
     public void startProcess() {
         baseUrl = loadProperty("URL");
-        if (Environment.isCheckOperationSystem()) {
+        if (Environment.isCheckOperatingSystem()) {
             Configuration.browser = Remote.class.getName();
         } else {
             selectBrowser("Chrome");

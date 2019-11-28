@@ -35,6 +35,15 @@ public class JavascriptErrorPage {
     private final transient SelenideElement content = $("p");
 
     /**
+     * The default constructor.
+     */
+    public JavascriptErrorPage() {
+        super();
+        //empty
+        return;
+    }
+
+    /**
      * Check that page javascript error page.
      *
      * @return the javascript error page
@@ -54,7 +63,7 @@ public class JavascriptErrorPage {
         Logs logs = WebDriverRunner.getWebDriver().manage().logs();
         LogEntries logEntries = logs.get(LogType.BROWSER);
         List<LogEntry> errorLogs = logEntries.filter(Level.ALL);
-        if (errorLogs.size() != 0) {
+        if (errorLogs.isEmpty()) {
             for (LogEntry logEntry : logEntries) {
                 LOG.info("Found error in logs: " + logEntry.getMessage());
             }

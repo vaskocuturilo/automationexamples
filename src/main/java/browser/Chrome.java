@@ -32,7 +32,7 @@ public class Chrome implements WebDriverProvider {
 
     @SuppressWarnings("deprecation")
     @Override
-    public WebDriver createDriver(DesiredCapabilities capabilities) {
+    public WebDriver createDriver(final DesiredCapabilities capabilities) {
         WebDriverManager.chromedriver().setup();
         capabilities.setCapability(ChromeOptions.CAPABILITY, getChromeOptions());
 

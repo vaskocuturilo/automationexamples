@@ -24,7 +24,7 @@ public class Firefox implements WebDriverProvider {
     }
 
     @Override
-    public WebDriver createDriver(DesiredCapabilities capabilities) {
+    public WebDriver createDriver(final DesiredCapabilities capabilities) {
         WebDriverManager.firefoxdriver().setup();
 
         return new FirefoxDriver(getFirefoxOptions().merge(capabilities));

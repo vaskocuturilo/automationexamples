@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.logging.Logger;
 
 import static utils.PropertiesReader.loadProperty;
 
@@ -17,16 +18,30 @@ import static utils.PropertiesReader.loadProperty;
  */
 public class Remote implements WebDriverProvider {
 
+    /**
+     * The constant LOGGER.
+     */
+    private static final Logger LOGGER = Logger.getLogger(Remote.class.getName());
+
+    /**
+     * The default constructor.
+     */
+    public Remote() {
+        super();
+        //empty
+        return;
+    }
+
     @Override
-    public WebDriver createDriver(DesiredCapabilities capabilities) {
+    public WebDriver createDriver(final DesiredCapabilities capabilities) {
         capabilities.setBrowserName("chrome");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability(ChromeOptions.CAPABILITY, Chrome.getChromeOptions());
         capabilities.setCapability("screenResolution", "1920x1080x24");
         try {
             return new RemoteWebDriver(getGridHubUrl(), capabilities);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            LOGGER.info("" + ex);
         }
         return null;
     }
@@ -38,8 +53,8 @@ public class Remote implements WebDriverProvider {
         URL hostURL = null;
         try {
             hostURL = new URL(System.getProperty("selenoid.url", loadProperty("LOCAL")));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+        } catch (MalformedURLException ex) {
+            LOGGER.info("" + ex);
         }
         return hostURL;
     }

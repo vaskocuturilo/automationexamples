@@ -1,6 +1,6 @@
 package pages;
 
-import base.BaseWebClass;
+import base.BaseWeb;
 import com.codeborne.selenide.SelenideElement;
 
 import java.util.logging.Logger;
@@ -16,7 +16,7 @@ public class BrokenImages {
     /**
      * The constant LOG.
      */
-    private static final Logger LOG = Logger.getLogger(BaseWebClass.class.getName());
+    private static final Logger LOG = Logger.getLogger(BaseWeb.class.getName());
 
 
     /**

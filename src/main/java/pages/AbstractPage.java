@@ -1,6 +1,6 @@
 package pages;
 
-import base.BaseWebClass;
+import base.BaseWeb;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 
@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
  * Abstract class AbstractPage.
  */
 @SuppressWarnings("PMD.LawOfDemeter")
-public abstract class AbstractPage extends BaseWebClass {
+public abstract class AbstractPage extends BaseWeb {
 
 
     /**
