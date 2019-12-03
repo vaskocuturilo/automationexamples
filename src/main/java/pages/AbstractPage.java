@@ -36,7 +36,8 @@ public abstract class AbstractPage extends BaseWeb {
     /**
      * Method Open pages.
      *
-     * @param url the url
+     * @param url          thi is url page.
+     * @param currentTitle this is current title for check.
      */
     public void openPageWithTitle(final String url, final String currentTitle) {
         Selenide.open(url);
