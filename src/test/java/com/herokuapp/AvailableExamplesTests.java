@@ -261,4 +261,16 @@ public class AvailableExamplesTests extends AbstractPage {
         new JavascriptErrorPage()
                 .checkTextOnPageAndGetErrors();
     }
+
+    @Test
+    @Story("Frames.")
+    public void testFrames(){
+        openPage("/frames");
+        new FramesPage()
+                .selectTypeOfFrame(Frames.NESTED_FRAMES)
+                .selectFrameFromTop(NestedFrames.MIDDLE,"middle")
+                .selectFrameFromBottom("Bottom")
+                .selectTypeOfFrame(Frames.I_FRAME)
+                .selectIFrame("Hello world");
+    }
 }
