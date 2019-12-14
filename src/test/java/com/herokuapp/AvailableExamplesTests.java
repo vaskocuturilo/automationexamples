@@ -264,13 +264,23 @@ public class AvailableExamplesTests extends AbstractPage {
 
     @Test
     @Story("Frames.")
-    public void testFrames(){
+    public void testFrames() {
         openPage("/frames");
         new FramesPage()
                 .selectTypeOfFrame(Frames.NESTED_FRAMES)
-                .selectFrameFromTop(NestedFrames.MIDDLE,"middle")
+                .selectFrameFromTop(NestedFrames.MIDDLE, "middle")
                 .selectFrameFromBottom("Bottom")
                 .selectTypeOfFrame(Frames.I_FRAME)
                 .selectIFrame("Hello world");
+    }
+
+    @Test
+    @Story("Tiny Mce")
+    public void testTinyMce() {
+        openPage("/tinymce");
+        new TinyMcePage()
+                .addTextInField("Hello world")
+                .switchTextFormat(Formats.BOLD)
+                .checkFormatText(CheckFormats.ITALIC);
     }
 }
