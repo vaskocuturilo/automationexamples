@@ -43,7 +43,7 @@ public class BaseWeb {
     public void startProcess() {
         baseUrl = loadProperty("URL");
         if (Environment.isCheckOperatingSystem()) {
-            Configuration.browser = Remote.class.getName();
+            selectBrowser("Remote");
         } else {
             selectBrowser("Chrome");
             clearBrowserCache();

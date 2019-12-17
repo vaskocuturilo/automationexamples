@@ -37,6 +37,7 @@ public class DifferentAuthorizationPage {
      */
     public DifferentAuthorizationPage checkValidationMessages(final String text) {
         content.waitUntil(Condition.enabled, DELAY).shouldHave(Condition.text(text));
+
         return this;
     }
 }

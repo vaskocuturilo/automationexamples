@@ -281,6 +281,6 @@ public class AvailableExamplesTests extends AbstractPage {
         new TinyMcePage()
                 .addTextInField("Hello world")
                 .switchTextFormat(Formats.BOLD)
-                .checkFormatText(CheckFormats.ITALIC);
+                .checkFormatText(CheckFormats.BOLD);
     }
 }
