@@ -24,7 +24,7 @@ public abstract class AbstractController {
      * Check Content type(Must be JSON),
      * return log detail(ALL).
      */
-    protected static RequestSpecification reqSpec = new RequestSpecBuilder()
+    protected static final RequestSpecification reqSpec = new RequestSpecBuilder()
             .setContentType("text/html;charset=utf-8")
             .setBaseUri("http://the-internet.herokuapp.com/")
             .setBasePath("slow")
@@ -37,7 +37,7 @@ public abstract class AbstractController {
      * Check Content type(Must be JSON),
      * Check response time (Must be less 15 sec.).
      */
-    protected static ResponseSpecification resSpec = new ResponseSpecBuilder()
+    protected static final ResponseSpecification resSpec = new ResponseSpecBuilder()
             .expectContentType("text/html;charset=utf-8")
             .expectResponseTime(Matchers.lessThan(TIME)).build();
 
