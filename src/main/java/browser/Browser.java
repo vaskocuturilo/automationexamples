@@ -35,15 +35,18 @@ public final class Browser {
         Configuration.browserSize = BROWSER_SIZE;
         if ("Chrome".equals(browser)) {
             WebDriverManager.chromedriver().setup();
-            Configuration.browser = "chrome";
+            Configuration.browser = Chrome.class.getName();
+            Configuration.timeout = TIME_OUT;
         } else if ("Firefox".equals(browser)) {
             WebDriverManager.firefoxdriver().setup();
-            Configuration.browser = "Firefox";
+            Configuration.browser = Firefox.class.getName();
             Configuration.timeout = TIME_OUT;
         } else if ("Edge".equals(browser)) {
             WebDriverManager.edgedriver().setup();
             Configuration.browser = "Edge";
             Configuration.timeout = TIME_OUT;
+        } else if ("Remote".equalsIgnoreCase(browser)) {
+            Configuration.browser = Remote.class.getName();
         } else {
             throw new IllegalStateException("Browser " + browser + " not supported in this test");
         }

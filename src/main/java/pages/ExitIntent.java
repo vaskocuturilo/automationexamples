@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -14,7 +15,7 @@ public class ExitIntent {
     /**
      * The private Selenide Element.
      */
-    private final transient SelenideElement close = $("div[id='ouibounce-modal'] div[class='modal-footer'] p");
+    private final transient SelenideElement close = $("div[class='modal-footer'] p");
 
     /**
      * The default constructor.
@@ -31,9 +32,9 @@ public class ExitIntent {
      * @return the exit intent
      */
     public ExitIntent moveMouseOutViewportPanel() {
-        actions().moveByOffset(1, 1).click().perform();
+        actions().moveByOffset(600, 0).build().perform();
 
-        close.click();
+        close.shouldBe(Condition.enabled).click();
 
         return this;
     }
