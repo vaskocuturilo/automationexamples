@@ -3,6 +3,7 @@ package pages;
 import base.BaseWeb;
 import com.codeborne.selenide.SelenideElement;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import static com.codeborne.selenide.Selenide.$$;
@@ -48,7 +49,9 @@ public class BrokenImages {
      */
     private void isImageBroken(final SelenideElement inputImages) {
         if (inputImages.getAttribute("naturalWidth").equals("0")) {
-            LOG.info("This image " + inputImages.getAttribute("outerHTML") + " is broken.");
+            if (LOG.isLoggable(Level.INFO)) {
+                LOG.info("This image " + inputImages.getAttribute("outerHTML") + " is broken.");
+            }
         }
     }
 }

@@ -1,7 +1,5 @@
 package base;
 
-import browser.Remote;
-import com.codeborne.selenide.Configuration;
 import environment.Environment;
 import listener.AllureScreenShooter;
 import org.testng.annotations.AfterTest;

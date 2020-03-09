@@ -14,7 +14,7 @@ public class AllureScreenShooter extends ExitCodeListener {
      *
      * @param result this is ITestResult.
      */
-    public void onTestFailure(ITestResult result) {
+    public void onTestFailure(final ITestResult result) {
         super.onTestFailure(result);
         AllureHelpers.takeScreenshot();
 

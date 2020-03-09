@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import static utils.PropertiesReader.loadProperty;
@@ -41,7 +42,9 @@ public class Remote implements WebDriverProvider {
         try {
             return new RemoteWebDriver(getGridHubUrl(), capabilities);
         } catch (Exception ex) {
-            LOGGER.info("" + ex);
+            if (LOGGER.isLoggable(Level.INFO)) {
+                LOGGER.info("" + ex);
+            }
         }
         return null;
     }
@@ -54,7 +57,9 @@ public class Remote implements WebDriverProvider {
         try {
             hostURL = new URL(System.getProperty("selenoid.url", loadProperty("LOCAL")));
         } catch (MalformedURLException ex) {
-            LOGGER.info("" + ex);
+            if (LOGGER.isLoggable(Level.INFO)) {
+                LOGGER.info("" + ex);
+            }
         }
         return hostURL;
     }

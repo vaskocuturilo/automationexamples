@@ -24,7 +24,7 @@ public enum CheckFormats {
     /**
      * Default constructor.
      */
-    CheckFormats(String thisCheckFormat) {
+    CheckFormats(final String thisCheckFormat) {
         this.checkFormat = thisCheckFormat;
     }
 

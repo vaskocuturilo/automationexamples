@@ -21,7 +21,7 @@ public class AllureHelpers {
      */
     @SuppressWarnings("UnusedReturnValue")
     @Attachment(value = "AllureTextReport", type = "text/plain", fileExtension = ".txt")
-    public static String attachText(String text) {
+    public static String attachText(final String text) {
         return text;
     }
 
@@ -33,7 +33,7 @@ public class AllureHelpers {
      */
     @SuppressWarnings("UnusedReturnValue")
     @Attachment(value = "AllureCSVReport", type = "text/csv", fileExtension = ".csv")
-    public static String attachCSV(String csv) {
+    public static String attachCSV(final String csv) {
         return csv;
     }
 
@@ -67,7 +67,7 @@ public class AllureHelpers {
      */
     @SuppressWarnings("UnusedReturnValue")
     @Attachment(value = "{name}", type = "image/png", fileExtension = ".png")
-    public static byte[] takeScreenshot(String name) {
+    public static byte[] takeScreenshot(final String name) {
         return getScreenshotBytes();
     }
 
@@ -79,7 +79,7 @@ public class AllureHelpers {
      */
     @SuppressWarnings("UnusedReturnValue")
     @Attachment(value = "Element screenshot", type = "image/png", fileExtension = ".png")
-    public static byte[] takeScreenshot(SelenideElement elem) {
+    public static byte[] takeScreenshot(final SelenideElement elem) {
         return getScreenshotBytes(elem);
     }
 
@@ -107,7 +107,7 @@ public class AllureHelpers {
      * @param elem the elem
      * @return the byte [ ]
      */
-    public static byte[] getScreenshotBytes(SelenideElement elem) {
+    public static byte[] getScreenshotBytes(final SelenideElement elem) {
         return elem.getScreenshotAs(OutputType.BYTES);
     }
 }

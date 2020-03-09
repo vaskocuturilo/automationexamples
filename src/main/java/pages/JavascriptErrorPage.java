@@ -60,12 +60,14 @@ public class JavascriptErrorPage {
      * The private method getConsoleErrors.
      */
     private void getConsoleErrors() {
-        Logs logs = WebDriverRunner.getWebDriver().manage().logs();
-        LogEntries logEntries = logs.get(LogType.BROWSER);
-        List<LogEntry> errorLogs = logEntries.filter(Level.ALL);
+        final Logs logs = WebDriverRunner.getWebDriver().manage().logs();
+        final LogEntries logEntries = logs.get(LogType.BROWSER);
+        final List<LogEntry> errorLogs = logEntries.filter(Level.ALL);
         if (errorLogs.isEmpty()) {
-            for (LogEntry logEntry : logEntries) {
-                LOG.info("Found error in logs: " + logEntry.getMessage());
+            for (final LogEntry logEntry : logEntries) {
+                if (LOG.isLoggable(Level.INFO)) {
+                    LOG.info("Found error in logs: " + logEntry.getMessage());
+                }
             }
         }
     }
