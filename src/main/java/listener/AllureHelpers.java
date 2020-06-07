@@ -12,7 +12,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * The class Allure helpers.
  */
-public class AllureHelpers {
+public final class AllureHelpers {
     /**
      * Attach text string.
      *

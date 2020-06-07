@@ -43,7 +43,7 @@ public class Remote implements WebDriverProvider {
             return new RemoteWebDriver(getGridHubUrl(), capabilities);
         } catch (Exception ex) {
             if (LOGGER.isLoggable(Level.INFO)) {
-                LOGGER.info("" + ex);
+                LOGGER.info(" " + ex);
             }
         }
         return null;
